@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_dart/weather_api/presentation/provider/weather_provider.dart';
 
 import '../../domain/repository/i_weather_repo.dart';
+import '../controllers/weather_provider.dart';
 
 @RoutePage()
 class WeatherPage extends StatefulWidget {

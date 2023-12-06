@@ -7,7 +7,8 @@ class WeatherTemperatureRepository implements WeatherRepo {
   @override
   Future<Either<WeatherFailures, WeatherTemperature>> getTemperature(
       {required String location}) {
-    /// 4exceotion
-    return Future.value(right(const WeatherTemperature(temp: 30)));
+    return Future.value(right(
+      const WeatherTemperature(temp: 30),
+    ));
   }
 }

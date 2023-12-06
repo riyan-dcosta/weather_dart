@@ -11,6 +11,7 @@ import 'package:weather_dart/core/config/router/app_router.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+
   // final theme = PlatformDispatcher.instance.platformBrightness;
   // print("theme : $theme");
 
@@ -44,6 +45,7 @@ class HomePageResponsive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     // final generatedColor = math.Random().nextInt(Colors.primaries.length);
     return SafeArea(child: ResponsiveSizer(
       builder: (BuildContext context, Orientation orientation, ScreenType screenType) {

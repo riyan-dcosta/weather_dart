@@ -16,6 +16,9 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
+    MediaQueryData mqData = MediaQuery.of(context);
+    print("dpr : ${mqData.devicePixelRatio}");
+    print(" reso : ${mqData.size}");
     return Scaffold(
       appBar: AppBar(
         title: const Text("Weather API Home"),
