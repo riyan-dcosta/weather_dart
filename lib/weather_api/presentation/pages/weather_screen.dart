@@ -1,29 +1,31 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../domain/repository/i_weather_repo.dart';
 import '../controllers/weather_provider.dart';
 
 @RoutePage()
-class WeatherPage extends StatefulWidget {
+class WeatherPage extends ConsumerStatefulWidget {
   const WeatherPage({super.key});
 
   @override
-  State<WeatherPage> createState() => _WeatherPageState();
+  ConsumerState<WeatherPage> createState() => _WeatherPageState();
 }
 
-class _WeatherPageState extends State<WeatherPage> {
+class _WeatherPageState extends ConsumerState<WeatherPage> {
   double temperature = 0.0;
 
   getPuneTemperature() async {
     final temp = await WeatherApi(WeatherRepo()).getTemperature();
     setState(() {
-      temperature = temp?.temp ?? -1;
+      // temperature = temp.temp;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    // final refVal = ref.listen(getTemperatureProvider, () {}, (){});
     return SafeArea(
       child: Scaffold(
         body: Column(
