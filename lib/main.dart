@@ -1,8 +1,3 @@
-// import 'dart:io';
-// import 'dart:math' as math;
-// import 'dart:ui';
-
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -10,25 +5,12 @@ import 'package:weather_dart/core/config/router/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-
-  // final theme = PlatformDispatcher.instance.platformBrightness;
-  // print("theme : $theme");
-
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.grey,
-
-    // statusBarBrightness: Brightness.dark,
     statusBarColor: Colors.white,
     statusBarIconBrightness: Brightness.dark,
-    // systemStatusBarContrastEnforced: false,
-
-    // systemNavigationBarContrastEnforced: true,
-    // systemNavigationBarDividerColor: Colors.red,
-    // systemNavigationBarIconBrightness: Brightness.light,
   ));
   final appRoute = AppRouter();
-  // runApp(HomePageResponsive());
   runApp(
     MaterialApp.router(
       routerConfig: appRoute.config(),
@@ -36,26 +18,17 @@ void main() async {
   );
 }
 
-class FlutterViewCustom {
-  // FlutterViewCustom(this.FlutterView);
-}
-
 class HomePageResponsive extends StatelessWidget {
   const HomePageResponsive({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    // final generatedColor = math.Random().nextInt(Colors.primaries.length);
     return SafeArea(child: ResponsiveSizer(
-      builder: (BuildContext context, Orientation orientation, ScreenType screenType) {
+      builder: (BuildContext context, Orientation orientation,
+          ScreenType screenType) {
         return MaterialApp(
-          // scrollBehavior: const ScrollBehavior().copyWith(
-          //     physics: const ClampingScrollPhysics(
-          //         parent: RangeMaintainingScrollPhysics())),
           home: SafeArea(
             child: Scaffold(
-              // appBar: AppBar(title: Text("home"),),
               body: Stack(children: [
                 Positioned(
                   top: 0,
@@ -69,14 +42,6 @@ class HomePageResponsive extends StatelessWidget {
                           color: Colors.red,
                         )
                       ],
-                      // children: List<Widget>.generate(
-                      //   15,
-                      //   (index) => Container(
-                      //     height: 100,
-                      //     width: 100,
-                      //     color: Colors.primaries[generatedColor],
-                      //   ),
-                      // ),
                     ),
                   ),
                 ),
