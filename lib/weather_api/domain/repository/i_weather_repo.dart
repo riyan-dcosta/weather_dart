@@ -5,8 +5,11 @@ import 'package:weather_dart/weather_api/domain/entities/weather_model.dart';
 import 'package:weather_dart/weather_api/domain/repository/weather_failures.dart';
 import 'package:riverpod/riverpod.dart';
 
+// final weatherRepoProvider = Provider<WeatherRepo>((ref) {
+//   return ;
+// });
 abstract class WeatherRepo {
-  factory WeatherRepo() => WeatherTemperatureRepository();
+  //  factory WeatherRepo() => WeatherTemperatureRepository();
 
   Future<Either<WeatherFailures, WeatherTemperature>> getTemperature(
       {required String location});

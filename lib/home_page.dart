@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  showWeatherApi(){
+  showWeatherApi() {
     context.pushRoute(const WeatherRoute());
   }
   @override
@@ -36,5 +36,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-

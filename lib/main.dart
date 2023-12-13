@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:weather_dart/core/config/router/app_router.dart';
 
@@ -12,8 +13,10 @@ void main() async {
   ));
   final appRoute = AppRouter();
   runApp(
-    MaterialApp.router(
-      routerConfig: appRoute.config(),
+    ProviderScope(
+      child: MaterialApp.router(
+        routerConfig: appRoute.config(),
+      ),
     ),
   );
 }
