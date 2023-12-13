@@ -1,0 +1,60 @@
+name: weather_dart
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.4 <4.0.0'
+
+dependencies:
+  device_info_plus: ^9.1.0
+  responsive_sizer: ^3.2.0
+
+  #  icons
+  ionicons: ^0.2.2
+
+  #  networking
+  retrofit: ^4.0.3
+  dio: ^5.3.3
+  logger: ^2.0.2+1
+  json_annotation: ^4.8.1
+
+  # State Management
+  riverpod: ^2.4.4
+  flutter_riverpod: ^2.4.4
+  hooks_riverpod: ^2.4.4
+
+  #  Others
+  floor: ^1.4.2
+  equatable: ^2.0.5
+  get_it: ^7.6.4
+  auto_route: ^7.8.4
+  awesome_dio_interceptor: ^1.0.0
+  oktoast: ^3.3.2+1
+  dartz: ^0.10.1
+  
+  #  injectable: ^2.3.2
+
+  flutter:
+    sdk: flutter
+  freezed_annotation: ^2.4.1
+  http: ^1.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+  build_runner: ^2.4.6
+
+  #  Networking
+  retrofit_generator: ^8.0.1
+  json_serializable: ^6.7.1
+
+  #  Others
+  auto_route_generator: ^7.3.2
+  lint: ^2.1.2
+  freezed: ^2.4.5
+
+flutter:
+  uses-material-design: true
