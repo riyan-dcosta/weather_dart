@@ -1,6 +1,6 @@
 # weather_dart
 weather api with clean architecture, riverpod, either, freezed.
 
-### Run Below commands at start
-1. `dart pub get`
-2. `dart run build_runner build`
+### Render Object
+ - weatherButton.dart file contains the basis of render object
+ - [YT RenderObject by Fluttr](https://www.youtube.com/watch?v=cq34RWXegM8&t=1s&ab_channel=Flutter)
