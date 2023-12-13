@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:weather_dart/core/config/router/app_router.dart';
+import 'package:weather_dart/core/config/themes/weather_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +17,9 @@ void main() async {
     ProviderScope(
       child: MaterialApp.router(
         routerConfig: appRoute.config(),
+        theme: ThemeData(
+          colorScheme: WeatherTheme.colorScheme,
+        ),
       ),
     ),
   );
