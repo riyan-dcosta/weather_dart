@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_dart/core/config/router/app_router.gr.dart';
+import 'package:weather_dart/core/utils/design_pattern/weatherButton.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -14,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   showWeatherApi() {
     context.pushRoute(const WeatherRoute());
   }
+
   @override
   Widget build(BuildContext context) {
     MediaQueryData mqData = MediaQuery.of(context);
@@ -28,9 +30,14 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 200,
             width: double.infinity,
+            child: WeatherButtonOneLeaf(
+              text: 'Hello there',
+            ),
           ),
-          ElevatedButton(onPressed: showWeatherApi, child: const Text("Show Weather "
-              "API"))
+          ElevatedButton(
+              onPressed: showWeatherApi,
+              child: const Text("Show Weather "
+                  "API"))
         ],
       ),
     );
