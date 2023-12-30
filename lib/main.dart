@@ -1,11 +1,46 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:googleai_dart/googleai_dart.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:weather_dart/core/config/router/app_router.dart';
+import 'package:weather_dart/core/config/themes/weather_theme.dart';
+import 'package:weather_dart/features/google_ai/palm_ai.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // read platform variables if required here.
+  Map<String, String?> _envVars = Platform.environment;
+  final _key = _envVars['GEMINI_KEY'];
+  print("envVa : ${_envVars['GEMINI_KEY']}");
+  if (_key != null) {
+    PlamAi.initialize(_key);
+  }
+  final client = PlamAi().client;
+  print('PlamAI print $client');
+
+  if (client != null) {
+    final res = await client.generateContent(
+      modelId: 'gemini-pro',
+      request: const GenerateContentRequest(
+        contents: [
+          Content(
+            parts: [
+              Part(text: 'what is AQI in weather'),
+            ],
+          ),
+        ],
+        generationConfig: GenerationConfig(
+          temperature: 0.8,
+        ),
+      ),
+    );
+    print(res.candidates?.first.content?.parts?.first.text);
+  }
+
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.grey,
     statusBarColor: Colors.white,
@@ -16,6 +51,9 @@ void main() async {
     ProviderScope(
       child: MaterialApp.router(
         routerConfig: appRoute.config(),
+        theme: ThemeData(
+          colorScheme: WeatherTheme.colorScheme,
+        ),
       ),
     ),
   );
