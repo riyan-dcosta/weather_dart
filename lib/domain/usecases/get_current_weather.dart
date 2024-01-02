@@ -8,6 +8,6 @@ class GetCurrentWeatherUsecase {
   GetCurrentWeatherUsecase(this.weatherRespository);
 
   Future<Either<Failure, WeatherEntity>> execute(String cityName) {
-    return weatherRespository.getCurrentWeather(cityName: cityName);
+    return weatherRespository.getCurrentWeather(cityName);
   }
 }

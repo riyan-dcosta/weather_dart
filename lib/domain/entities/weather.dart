@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 
 class WeatherEntity extends Equatable {
   final String cityName;
-  final String temperature;
+  final double temperature;
 
   const WeatherEntity({required this.cityName, required this.temperature});
 

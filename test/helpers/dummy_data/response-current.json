@@ -1,0 +1,16 @@
+{
+  "location": {
+    "name": "New York",
+    "region": "New York",
+    "country": "United States of America",
+    "lat": 40.71,
+    "lon": -74.01,
+    "tz_id": "America/New_York",
+    "localtime_epoch": 1704216709,
+    "localtime": "2024-01-02 12:31"
+  },
+  "current": {
+    "temp_c": 3.3,
+    "condition": {}
+  }
+}
